@@ -33,6 +33,7 @@ USAGE
 <!-- commands -->
 * [`git-levers hello [FILE]`](#git-levers-hello-file)
 * [`git-levers help [COMMAND]`](#git-levers-help-command)
+* [`git-levers runcom [FILE]`](#git-levers-runcom-file)
 
 ## `git-levers hello [FILE]`
 
@@ -70,4 +71,20 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.1/src/commands/help.ts)_
+
+## `git-levers runcom [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ git-levers runcom [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/runcom.ts](https://github.com/meganemura/git-levers/blob/v0.0.0/src/commands/runcom.ts)_
 <!-- commandsstop -->
