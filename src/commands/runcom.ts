@@ -1,25 +1,14 @@
 import {Command, flags} from '@oclif/command'
+import {execSync} from 'child_process'
 
 export default class Runcom extends Command {
-  static description = 'describe the command here'
-
-  static flags = {
-    help: flags.help({char: 'h'}),
-    // flag with a value (-n, --name=VALUE)
-    name: flags.string({char: 'n', description: 'name to print'}),
-    // flag with no value (-f, --force)
-    force: flags.boolean({char: 'f'}),
-  }
-
-  static args = [{name: 'file'}]
+  static description = 'Run command and commit generated files'
 
   async run() {
-    const {args, flags} = this.parse(Runcom)
-
-    const name = flags.name || 'world'
-    this.log(`hello ${name} from /Users/meganemura/src/github.com/meganemura/git-levers/src/commands/runcom.ts`)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
-    }
+    const command = this.argv.join(' ')
+    console.log(`$ ${command}`)
+    execSync(command)
+    execSync('git add .')
+    execSync(`git commit -m'$ ${command}'`)
   }
 }
