@@ -33,7 +33,8 @@ USAGE
 <!-- commands -->
 * [`git-levers hello [FILE]`](#git-levers-hello-file)
 * [`git-levers help [COMMAND]`](#git-levers-help-command)
-* [`git-levers runcom [FILE]`](#git-levers-runcom-file)
+* [`git-levers runcom`](#git-levers-runcom)
+* [`git-levers sync [FILE]`](#git-levers-sync-file)
 
 ## `git-levers hello [FILE]`
 
@@ -72,13 +73,24 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.1/src/commands/help.ts)_
 
-## `git-levers runcom [FILE]`
+## `git-levers runcom`
+
+Run command and commit generated files
+
+```
+USAGE
+  $ git-levers runcom
+```
+
+_See code: [src/commands/runcom.ts](https://github.com/meganemura/git-levers/blob/v0.0.0/src/commands/runcom.ts)_
+
+## `git-levers sync [FILE]`
 
 describe the command here
 
 ```
 USAGE
-  $ git-levers runcom [FILE]
+  $ git-levers sync [FILE]
 
 OPTIONS
   -f, --force
@@ -86,5 +98,5 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src/commands/runcom.ts](https://github.com/meganemura/git-levers/blob/v0.0.0/src/commands/runcom.ts)_
+_See code: [src/commands/sync.ts](https://github.com/meganemura/git-levers/blob/v0.0.0/src/commands/sync.ts)_
 <!-- commandsstop -->
