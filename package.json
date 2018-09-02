@@ -1,0 +1,62 @@
+{
+  "name": "git-levers",
+  "version": "0.0.0",
+  "author": "meganemura @meganemura",
+  "bin": {
+    "git-levers": "./bin/run"
+  },
+  "bugs": "https://github.com/meganemura/git-levers/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.0",
+    "@oclif/config": "^1.7.4",
+    "@oclif/plugin-help": "^2.1.1",
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.18.0",
+    "@oclif/test": "^1.2.0",
+    "@oclif/tslint": "^1.1.2",
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.9.4",
+    "chai": "^4.1.2",
+    "globby": "^8.0.1",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/meganemura/git-levers",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "git-levers",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "meganemura/git-levers",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
+    "posttest": "tsc -p test --noEmit && tslint -p test -t stylish",
+    "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
+    "prepare": "rm -rf lib && tsc",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
